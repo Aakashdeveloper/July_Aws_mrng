@@ -1,0 +1,43 @@
+On  prime			         |      On Cloud                    | Hybrid
+--------------------------------------------------------------------------------------
+=> Setup and manage          |     Provided as VM               | onprime+ cloud
+    locally 			     |     and maintained by cloud      | database +  Application
+12am-8am=> Low.              |     provide,  Pay as you go
+8am-2pm=> Moderate           |     No need worry about
+2pm-6pm=>high                |     Infra
+7pm-12am=>very high
+
+MultiCloud
+AWS+GCP+Azure
+
+
+—————————————-
+Azure
+GCP
+Oracle
+DO SAP
+
+AWS 79%
+
+/*************************
+    Model
+**************************/
+
+IAAS  => Infra as service       Ec2
+PAAS  => Platform as service   Elastic Beanstalk
+SAAS  => Software as Service   workmail
+
+/*************************
+   Scaling 
+**************************/
+Horizontal Scaling
+1machine + 1machine
+
+Vertical Scaling
+10gb + 10Gb
+
+
+/*************************
+  s3
+**************************/
+99.9999999999
