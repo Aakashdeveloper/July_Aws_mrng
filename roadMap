@@ -22,3 +22,24 @@ IAM
 
 
 **Show how role affect EC2
+
+--------------------------
+/****************************
+    Register Domain
+****************************/
+=>Route53
+    => Choose Your Domain name
+        => validate and buy
+
+www.amazon.in
+www.amazon.com
+
+A record => help to map domain to IP(IPv4)
+AAAA record  => help to map domain to IP(IPv6)
+
+CNAME ( Conanical Name)=> One subdomain to another subdomain
+    => Chargeable
+
+Alias Record => S3/ELB we have Alias
+aakashhanda.xyz=> s3dns
+only in AWS(connect with)

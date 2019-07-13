@@ -8,6 +8,7 @@ sno |    name  |   English   | Hindi  |
 1   |   John   |             |   80%  |
 2   |   Ankit  |    80%      |        |
 ---------------------------------------
+
 [
     {
         name:"john",
@@ -15,7 +16,7 @@ sno |    name  |   English   | Hindi  |
     },
     {
         name:"Ankit",
-        "emgilsh":80
+        "engilsh":80
     }
 ]
 
@@ -158,3 +159,7 @@ Acc2 (Aakash developer)  Reciver
     =>Account* (number od aakashhand account)
        Role* (created in aakash handa account)
        =>Switch Role
+
+
+mysql -h demodb.csdfnctztcgm.us-east-1.rds.amazonaws.com -P 3306
+-u root -p password
