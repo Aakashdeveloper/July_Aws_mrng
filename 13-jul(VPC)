@@ -156,3 +156,115 @@ PuttyGen
                             => Provide Permisson
                                 =>ssh -i 'demoprivate.pem' ec2-user@10.0.2.67
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html?icmpid=docs_ec2_console
+
+
+/**************************
+ Step To create NAT Gateway
+****************************/
+=> Generate Elastic IP
+    => Elastic IP
+        =>amazon pool
+            => Allocate
+*** Its Paid if its not attached
+
+=>Select NAT Gateway
+    =>Provide
+        Subnet                              ElasticIP
+        Public subnet                       Generated EIP
+
+/**************************
+Attach to Route Table
+****************************/
+=> Go to RouteTable
+    =>Private Route table
+        =>Actions
+            =>Edit Routes
+                =>Provide
+                    Destination                     Target
+                    0.0.0.0/0                       Nat
+
+/**************************
+Testing of Nat
+****************************/
+=> Connect private machine from public subnet
+    =>Try ping google.com
+
+
+/**************************
+ Step To create NAT Instance
+****************************/
+=> EC2
+    =>Instance
+        =>Launch Instance
+            =>Select Community AMI
+                =>Search NAT
+                    =>Select First Nat
+                        =>Configuration
+                            Provide
+                            Demovpc      public subnet
+                                =>launch
+
+/**************************
+ Step To Associate EIP with NAT
+****************************/
+=> Select Elastic IP
+    =>Generate New EIP
+        =>Select EIP
+            =>Action
+                =>Associate Address
+                    =>Select Instance
+                        =>NAt Instance
+
+    =>Route Table
+        =>Priavte RouteTable
+            =>Select Route
+                =>Edit Route
+                    =>Provide
+                    0.0.0.0/0           Instance(NAT)
+
+    =>Go To EC2
+        =>Select NAT instance
+            =>securityGroup
+                =>launch-wizard
+                    =>Inbound
+                        =>Edit
+                            =>Add Rule 
+                                =>Provide
+                                Type                    CIDR
+                                ALL ICMP                10.0.2.0/24
+
+/**************************
+ SG & ACL
+****************************/
+SG
+>Virtual Firewall accross the instance
+>statefull in nature
+>only allow Rule
+>deny all mode
+
+NACl
+Virtual firewall accross the subnet
+>stateless
+>allow & denay also
+>everything is allowed
+
+
+/**************************
+ Step For SG
+****************************/
+=>securityGroup in EC2 consle
+    =>Create securityGroup
+        =>Provide
+            Name            description     VPC
+            mysg              aboutmysg         Dmeo
+
+
+/**************************
+ Step For ACL
+****************************/
+=> Newtwork ACL(vpc)
+    =>Provide Name
+        =>Select VPC
+            =>Add Rule
+*** Prioerity is on the basis of Rule number
+    lower the rule number higher the priority 
