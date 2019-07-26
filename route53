@@ -1,0 +1,21 @@
+www.    aakashanda     .me
+host    subdomain       top level domain
+
+A record => help to map domain Name to IP address
+        A record for IPv4 
+        AAAA fro IPv6
+
+
+
+
+
+IAM
+VPC
+EC2
+LoadBalance
+AutoScale
+S3
+Route53
+EBS
+LightSail
+Elastic Bean Stack
