@@ -1,0 +1,52 @@
+| SNo |  Name     | Hindi |  English |
+|------------------------------------|
+|  1  | John      | 80    |          |
+|  2  | Ankit     |       |   80     |
+
+[
+    {
+        sno:1
+        name:"John",
+        hindi: 80
+    },
+    {
+        sno:2
+        name:"Ankit",
+        english: 80
+    },
+    {
+        sno:2
+        name:"Ankit",
+        english: 80,
+        Computers: 90
+    }
+]
+SQL                 NoSql
+---------------------------
+Database   ======  Database
+Table      ======  Collection
+Row        ======  Document
+
+mypostgress
+/**********************
+SETUP RDBMS (Postgress)
+**********************/
+=> Create Database
+    =>Select Postgress
+        =>Dev
+            =>Select Free tier
+                => Memory 20GB
+                    =>AUtoScale(No)
+                        =>Provide
+                            DbInstance Name     MasterUser  Password
+                            mypostgress          aakash      ********
+                                =>VPC
+                                    =>Subnet
+                                        =>Public(Yes)
+    =>Az(but in same region)
+        =>dbname    port 
+        firstDB     5432
+        =>IAM(No)
+            =>Backup(provide days and time)
+                =>Monitoring(no)
+                    =>
